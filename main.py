@@ -5,7 +5,7 @@ import webbrowser
 import keyboard
 
 class DraggableRectangle:
-    def __init__(self, canvas, color="black", width=2):
+    def __init__(self, canvas, color="white", width=2):
         self.canvas = canvas
         self.color = color
         self.width = width
@@ -70,7 +70,8 @@ while True:
     keyboard.wait(hotkey)
     root = tk.Tk()
     root.title("Draggable Rectangle")
-    canvas = tk.Canvas(root, bg="white", width=root.winfo_screenwidth(), height=root.winfo_screenheight())
+    root.attributes('-fullscreen', True)
+    canvas = tk.Canvas(root, bg="black", width=root.winfo_screenwidth(), height=root.winfo_screenheight())
     canvas.pack(fill=tk.BOTH, expand=True)
     root.attributes("-alpha", 0.5)
     draggable_rect = DraggableRectangle(canvas)
